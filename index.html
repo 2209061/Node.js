@@ -1,0 +1,158 @@
+<html>
+
+
+
+<head>
+
+
+
+   
+  <meta charset="UTF-8" />
+
+
+
+   
+  <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+
+
+
+   
+  <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+
+
+
+   
+  <script src="http://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+
+
+    <title>React</title>
+
+
+
+</head>
+
+
+
+<body>
+
+
+
+      <div id="root">
+
+
+
+          </div>
+
+
+
+      <h1>Getting Started with React</h1>
+
+
+
+   
+  <script type="text/babel">
+
+
+
+
+
+    const dishes = ["Benni", "Biriany", "Garlic Bread"];
+
+
+
+    const dishObjects = dishes.map((dish, i) => ({
+
+
+
+      id: i,
+
+      title: dish
+
+
+
+    }));
+
+
+
+    function Main(props) {
+
+
+
+      return (
+
+
+
+        <section>
+
+          <img height={200}
+
+            src="https://envato-shoebox-0.imgix.net/twenty20/production/uploads/items/db853e37-016b-4bc9-a960-9278b6a36702/source?auto=compress%2Cformat&mark=https%3A%2F%2Felements-assets.envato.com%2Fstatic%2Fwatermark2.png&w=800&fit=max&markalign=center%2Cmiddle&markalpha=18&s=0c995caed1d8ab4188828af96910f9af" />
+
+          <ul>
+
+
+
+            {props.dishes1.map((dish) => (
+
+
+
+              <li key={dish.id}>{dish.title}</li>
+
+
+
+            ))}
+
+          </ul>
+
+        </section>
+
+
+
+      );
+
+
+
+    }
+
+    function App() {
+
+
+
+      return (
+
+
+
+        <Main dishes1={dishObjects} />
+
+
+
+      );
+    }
+
+    function Footer() {
+      return (
+
+        <h1>This is footer </h1>
+      );
+    }
+    function headings() {
+      return (
+
+        <h1>This is header </h1>
+      );
+    }
+
+    ReactDOM.render(
+
+
+      <React.Fragment>
+        <App />,
+        <Footer />,
+        <headings />,
+      </React.Fragment>,
+      document.getElementById("root"));
+  </script>
+</body>
+
+</html>
